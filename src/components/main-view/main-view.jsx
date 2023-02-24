@@ -3,8 +3,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-  const [movie, setMovies] = useState([]
-    );
+  const [movies, setMovies] = useState([]);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -34,7 +33,7 @@ export const MainView = () => {
     );
   }
 
-  if (movie.length === 0) {
+  if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
 
