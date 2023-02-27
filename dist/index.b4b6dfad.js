@@ -27168,7 +27168,7 @@ const MainView = ()=>{
                     Description: doc.Description,
                     Genre: doc.Genre,
                     Director: doc.Director,
-                    ImageURL: doc.ImageURL,
+                    ImagePath: doc.ImagePath,
                     Featured: doc.Featured
                 };
             });
@@ -28187,7 +28187,7 @@ const MovieView = ({ movie , onBackClick  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.ImageURL
+                    src: movie.ImagePath
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 7,

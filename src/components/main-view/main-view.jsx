@@ -17,7 +17,7 @@ export const MainView = () => {
             Description: doc.Description,
             Genre: doc.Genre,
             Director: doc.Director,
-            ImageURL: doc.ImageURL,
+            ImagePath: doc.ImagePath,
             Featured: doc.Featured
           }
         });
