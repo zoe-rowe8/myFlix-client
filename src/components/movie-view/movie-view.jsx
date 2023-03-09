@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import { Button, Row, Col } from "react-bootstrap";
 import "./movie-view.scss";
+import { useState } from "react";
+import { useEffect } from "react";
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies, username, favoriteMovies }) => {
+  const { movieId } = useParams();
+  const storedToken = localStorage.getItem("token");
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const movie = movies.find((m) => m.id === movieId);
+
   return (
     <div>
       <div>
@@ -23,11 +33,9 @@ export const MovieView = ({ movie, onBackClick }) => {
         <span>Description: </span>
         <span>{movie.Description}</span>
       </div>
-      <button 
-      onClick={onBackClick} 
-      className="back-button"
-      style={{ cursor: "pointer" }}
-      >Back</button>
+      <Link to={`/`}>
+        <button className="back-button">Back</button>
+      </Link>
     </div>
   );
 };
