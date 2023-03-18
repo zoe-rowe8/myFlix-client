@@ -8,8 +8,9 @@ import { ProfileView } from "../profile-view/profile-view";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import Col from 'react-bootstrap/Col';
+import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./main-view.scss";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -17,6 +18,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     if (!token) {
@@ -44,6 +46,11 @@ export const MainView = () => {
     })
 }, [token])
 
+//Handle search input
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+  };
+
 return (
   <BrowserRouter>
     <NavigationBar
@@ -51,8 +58,10 @@ return (
         onLoggedOut={() => {
           setUser(null);
           setToken(null);
+          setSearchInput("");
           localStorage.clear();
         }}
+        handleSearchInput={(e) => setSearchInput(e.target.value)}
       />
     <Row className="justify-content-md-center">
         <Routes>
@@ -125,7 +134,8 @@ return (
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className="mb-4" key={movie.id} md={3}>
+                      <Col className={`mb-4`}
+                      key={movie.id} md={3}>
                         <MovieCard movie={movie} />
                       </Col>
                     ))}

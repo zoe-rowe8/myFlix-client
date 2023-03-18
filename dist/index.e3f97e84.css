@@ -1,4 +1,6 @@
-
+.hidden-card {
+  display: none;
+}
 
 .back-button {
   color: #f5f5f5;
@@ -6,6 +8,10 @@
   border: none;
   border-radius: 4px;
   padding: 4px 12px;
+}
+
+hidden-card {
+  display: none;
 }
 
 :root {

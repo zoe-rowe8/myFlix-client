@@ -29,3 +29,5 @@ Returns data about a director (name, bio, birth year, death year) Displays examp
 
 Profile view
 Allows users to update their user info (username, password, email, date of birth) Allows existing users to deregister Displays favorite movies Allows users to remove a movie from their list of favorites
+
+Hosted App: https://myflix-cfzr-achievement.netlify.app/login
